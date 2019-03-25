@@ -19,3 +19,13 @@
 
 <script lang='ts' src="./App.ts" />
 
+<style lang='scss'>
+@import "../node_modules/slick-carousel/slick/slick.css";
+
+.slick-slide {
+  margin: 0 20px;
+}
+</style>
+
+
+

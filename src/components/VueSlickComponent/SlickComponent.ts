@@ -1,15 +1,12 @@
 import { Component, Vue } from 'vue-property-decorator';
-// import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
-// import $ from 'jquery';
 import Slick from 'vue-slick';
-// import '../../../node_modules/slick-carousel/slick/slick.css';
 
 @Component({
   components: {
     slick: Slick,
   },
 })
-export default class Home extends Vue {
+export default class SlickComponent extends Vue {
   // @ts-ignore-nextline
   public $refs: Vue['$refs'] & {
     slick: any;
@@ -20,6 +17,26 @@ export default class Home extends Vue {
     // Any other options that can be got from plugin documentation
     prevArrow: false,
     nextArrow: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          // dots: true,
+        },
+      },
+      // {
+      //   breakpoint: 300,
+      //   settings: "unslick" // destroys slick
+      // }
+    ],
   };
 
   public next() {
